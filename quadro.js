@@ -92,7 +92,9 @@ class Quadro extends React.Component{
         this.setState(
             {
                 mockData: this.state.mockData.map(item => {
+                    //Se o ID do item for igual ao ID do estado
                     if (item.id === this.state.id) {
+                        //Alterar titulo para o do input item
                         item['title'] = event.target.item.value;
                         return item;
                     }
@@ -111,11 +113,14 @@ class Quadro extends React.Component{
         this.setState(
             {
                 mockData: this.state.mockData.map(item => {
+                    //Se o id do item for igual ao recebido
                     if (item.id === id) {
+                        //Se já estiver pronto, então colocar como false.
                         if (item.done === true){
                             item['done'] = false;
                             return item;
                         } else {
+                        //Se não estiver pronto, colocar como true.
                             item['done'] = true;
                             return item;
                         }
